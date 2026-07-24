@@ -15,6 +15,10 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+}); 
+
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Backend is running' });
 });
 
 app.post('/api/contact', async (req, res) => {
